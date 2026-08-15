@@ -1,0 +1,24 @@
+{
+  "name": "shortcut",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "tauri": "tauri",
+    "build:release": "tauri build --bundles deb"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1",
+    "solid-js": "2.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@tauri-apps/cli": "^2.11.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.1",
+    "vite-plugin-solid": "3.0.0-next.27"
+  }
+}

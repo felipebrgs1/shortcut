@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-panel: #1f1f24;
+  --color-panel-border: #2e2e35;
+  --color-item-active: #2a2a33;
+  --color-item-hover: #25252c;
+  --color-text-main: #e5e5e8;
+  --color-text-dim: #8a8a93;
+  --color-accent: #7aa8ff;
+}
+
+html,
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+}
+
+* {
+  scrollbar-width: none;
+}

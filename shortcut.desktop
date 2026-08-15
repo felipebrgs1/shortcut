@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Shortcut
-Comment=Launcher de apps, calculadora e histórico de clipboard
-Exec=/home/felipeb/shortcut/target/release/shortcut
-Icon=shortcut
-Terminal=false
-Categories=Utility;
