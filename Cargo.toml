@@ -1,0 +1,21 @@
+[package]
+name = "shortcut"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.36"
+egui_extras = { version = "0.36", features = ["file", "image", "svg"] }
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+arboard = { version = "3.6.1", features = ["wayland-data-control"] }
+evalexpr = "13.1.0"
+fuzzy-matcher = "0.3.7"
+parking_lot = "0.12.5"
+dirs = "6.0.0"
+
+[profile.release]
+lto = "thin"
+strip = true
+codegen-units = 1

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Shortcut
+Comment=Launcher de apps, calculadora e histórico de clipboard
+Exec=~/.local/bin/shortcut
+Icon=shortcut
+Terminal=false
+Categories=Utility;
