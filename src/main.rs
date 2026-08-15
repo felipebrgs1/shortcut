@@ -21,7 +21,6 @@ const ROW_H: f32 = 42.0;
 const FOOTER_H: f32 = 34.0;
 const RADIUS: f32 = 12.0;
 
-const BG: Color32 = Color32::from_rgb(0x16, 0x16, 0x1a);
 const PANEL: Color32 = Color32::from_rgb(0x1f, 0x1f, 0x24);
 const BORDER: Color32 = Color32::from_rgb(0x2e, 0x2e, 0x35);
 const TEXT: Color32 = Color32::from_rgb(0xe5, 0xe5, 0xe8);
@@ -38,13 +37,12 @@ fn main() -> eframe::Result {
     if !bind_primary_instance() {
         return Ok(());
     }
-    let transparent = std::env::var_os("WAYLAND_DISPLAY").is_none();
     let mut viewport = egui::ViewportBuilder::default()
         .with_inner_size([WINDOW_W, WINDOW_H])
         .with_min_inner_size([WINDOW_W, WINDOW_H])
         .with_resizable(false)
         .with_decorations(false)
-        .with_transparent(transparent)
+        .with_transparent(true)
         .with_always_on_top()
         .with_visible(false);
     if let Some(icon) = load_icon() {
@@ -451,11 +449,8 @@ impl eframe::App for ShortcutApp {
     }
 
     fn clear_color(&self, _visuals: &egui::Visuals) -> [f32; 4] {
-        if std::env::var_os("WAYLAND_DISPLAY").is_some() {
-            BG.to_normalized_gamma_f32()
-        } else {
-            [0.0, 0.0, 0.0, 0.0]
-        }
+        // Totalmente transparente: os cantos arredondados deixam o desktop aparecer
+        [0.0, 0.0, 0.0, 0.0]
     }
 }
 

@@ -49,8 +49,8 @@ install -Dm644 shortcut.desktop ~/.local/share/applications/shortcut.desktop
 
 ## Detalhes de implementação
 
-- **Janela**: 720×464, sem decoração, transparente no X11 (cantos arredondados
-  reais); no Wayland o fundo é opaco por limitação do protocolo.
+- **Janela**: 720×464, sem decoração, transparente (X11 e Wayland) com
+  cantos realmente arredondados — o anti-aliasing funde com o desktop.
 - **Foco**: esconde ao perder foco, mas só depois de ter recebido foco ao
   menos uma vez (evita sumir se o compositor negar ativação).
 - **Debug**: `SHORTCUT_KEEP=1 shortcut` desativa o blur-hide (útil para
